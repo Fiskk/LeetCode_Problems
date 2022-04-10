@@ -1,0 +1,15 @@
+class Solution:
+    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+        currentChain = 0
+        longestChain = 0
+        
+        for num in nums:
+            if num == 1:
+                currentChain += 1
+                if currentChain > longestChain:
+                    longestChain = currentChain
+            else:
+                currentChain = 0
+        
+        return longestChain
+                
